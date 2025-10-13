@@ -1,0 +1,47 @@
+body{
+  background-color: black;
+}
+
+p {
+  background-color: rgb(241, 108, 51);
+}
+
+.box {
+  background-color: rgb(153, 0, 255);
+  padding: 6px;
+  margin-bottom: 16px;
+}
+
+#two {
+  padding: 20px;
+  border: 2px dashed rgb(250, 250, 250);
+}
+
+#two p {
+  background-color: rgb(43, 226, 226);
+  display: inline-block;
+  width: 600px;
+}
+
+#five{
+  width: 200px;
+  height: 100px;
+  margin-left: 200px;
+
+}
+
+.column{
+  width: 30%;
+  height: 100px;
+  display: inline-block;
+}
+
+.column:hover {
+  background-color: azure;
+  cursor: pointer;
+}
+
+p:hover {
+  font-style: italic;
+    cursor: pointer;
+}

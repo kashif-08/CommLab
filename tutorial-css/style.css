@@ -1,0 +1,11 @@
+h1 {
+  color: rgb(255, 202, 127);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 24px;
+}
+
+pre {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12;
+  color: rgb(255, 247, 29);
+}
