@@ -1,0 +1,29 @@
+body{
+  background-color: aquamarine;
+}
+
+.box{
+  width: 300px;
+  /* height: 100px; */
+  outline: 2px solid white;
+  padding: 10px;
+  margin: 20px;
+  background-color: lightcyan;
+}
+
+#one{
+  /* display: none; this hides the element and the elem no longer takes that place */
+  /* visibility: hidden; */
+  /* opacity: 0; */
+}
+
+
+#two{
+  position: relative;
+}
+
+#one span{
+  position: relative;
+  left: 20px;
+}
+
