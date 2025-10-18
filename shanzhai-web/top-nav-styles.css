@@ -28,7 +28,7 @@
   height: 60px;  /* give it an explicit height */
   background-color: rgb(33, 33, 33);  /* match your body bg or set as needed */
   z-index: 100;  /* ensure it stays on top */
-}
+} 
 
 
 .chatgpt-text-icon{
