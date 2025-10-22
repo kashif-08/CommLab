@@ -1,0 +1,12 @@
+body{
+  margin-left: 56px;
+}
+
+.page-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-side{
+  flex: 1;
+}
