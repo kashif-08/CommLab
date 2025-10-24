@@ -2,15 +2,17 @@
 
 # CHAT GPT TURNS MALICIOUS
 
-#### What would happen if Chat GPT turned malicious and gave you access to something very private and confidential? Something that showed you the dark side of its CEO, Sam Altman? 
+![project-page](assets/evil-gpt.png)
 
-![project-page](assets/accessed-files.png)
+#### What would happen if Chat GPT turned malicious and gave you access to something very private and confidential? Something that showed you the dark side of its CEO, Sam Altman? 
 
 AI has completely changed the way we use and experience the internet. Millions of people now use different AI tools for all kinds of needs — from summarizing text to creating full user interfaces. The most popular of these tools is OpenAI’s ChatGPT. However, OpenAI and its CEO, Sam Altman, have faced several controversies, including accusations of copyright theft and shutting down their safety team.
 
 This project highlights the darker side of Sam Altman and OpenAI. To show this creatively, I imagined a situation where the user is doing a normal search but starts seeing strange content errors. Soon, it’s revealed that ChatGPT has turned evil and is exposing Sam Altman’s personal emails and messages to the user.
 
 ## Project Breakdown
+
+![project-page](assets/accessed-files.png)
 
 ### 1 - Process: Design and Composition
 My website explores the idea of a malicious version of GPT. It starts with a page that looks exactly like the real ChatGPT homepage. When cloning, I copied the icons, colors, and typography directly from the original site to make it look identical. To create the transition from “normal GPT” to a “malicious” one, I use a series of error screens that gradually change the visuals and content.
@@ -24,9 +26,9 @@ Overall, I used a mix of color, typography, and layout to represent the gradual 
 ### 2 - Process: Technical 
 In building this project, I focused on two main things: first, every element on the page is wrapped inside a div; and second, I used nested flexboxes almost everywhere in the layout – basically, every page layout is built using flexbox. This made it much easier to align items and gave me greater control over spacing and positioning – even the smallest gaps.
 
-For styling, I only used classes instead of IDs. One of the first things I did was remove the default paragraph margins so I could control spacing more precisely. For the two navigation bars on the first three pages, I used position: fixed to keep them stuck to the top and left sides of the page.
+For styling, I only used classes instead of IDs. One of the first things I did was remove the default paragraph margins so I could control spacing more precisely. For the two navigation bars on the first three pages, I used position: fixed, combined with 'left' 'right' 'top' and 'bottom' properties - to keep them stuck to the top and left sides of the page. Below, is the code snippet that I used for the left navigation bar:
 
-`.left-nav-bar-container{
+`left-nav-bar-container{
   display: flex;
   flex-direction: column;
   gap: 16px;
