@@ -1,0 +1,369 @@
+.main-container{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.lorem-p{
+  width: 1000px;
+  font-family: monospace;
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+@keyframes color-change {
+  0% {
+    background-color: rgb(255, 255, 255);
+  }
+  20% {
+    background-color: rgb(207, 168, 29);
+  }
+  40% {
+    background-color: rgb(234, 50, 50);
+  }
+  60% {
+    background-color: rgb(207, 168, 29);
+  }
+  80% {
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+.lorem-p span{
+  display: inline-block;
+}
+
+/* Word 1: falls at 0s, rises at 14.6s */
+@keyframes word-1 {
+  0% { transform: translateY(0px); color: black; }
+  6.67% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  16.67% { transform: translateY(500px); color: aqua; }
+  81.11% { transform: translateY(500px); color: aqua; }
+  87.78% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  97.78%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 2: falls at 0.2s, rises at 14.4s */
+@keyframes word-2 {
+  0%, 1.11% { transform: translateY(0px); color: black; }
+  7.78% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  17.78% { transform: translateY(500px); color: aqua; }
+  80% { transform: translateY(500px); color: aqua; }
+  86.67% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  96.67%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 3: falls at 0.4s, rises at 14.2s */
+@keyframes word-3 {
+  0%, 2.22% { transform: translateY(0px); color: black; }
+  8.89% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  18.89% { transform: translateY(500px); color: aqua; }
+  78.89% { transform: translateY(500px); color: aqua; }
+  85.56% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  95.56%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 4: falls at 0.6s, rises at 14s */
+@keyframes word-4 {
+  0%, 3.33% { transform: translateY(0px); color: black; }
+  10% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  20% { transform: translateY(500px); color: aqua; }
+  77.78% { transform: translateY(500px); color: aqua; }
+  84.44% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  94.44%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 5: falls at 0.8s, rises at 13.8s */
+@keyframes word-5 {
+  0%, 4.44% { transform: translateY(0px); color: black; }
+  11.11% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  21.11% { transform: translateY(500px); color: aqua; }
+  76.67% { transform: translateY(500px); color: aqua; }
+  83.33% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  93.33%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 6: falls at 1s, rises at 13.6s */
+@keyframes word-6 {
+  0%, 5.56% { transform: translateY(0px); color: black; }
+  12.22% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  22.22% { transform: translateY(500px); color: aqua; }
+  75.56% { transform: translateY(500px); color: aqua; }
+  82.22% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  92.22%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 7: falls at 1.2s, rises at 13.4s */
+@keyframes word-7 {
+  0%, 6.67% { transform: translateY(0px); color: black; }
+  13.33% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  23.33% { transform: translateY(500px); color: aqua; }
+  74.44% { transform: translateY(500px); color: aqua; }
+  81.11% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  91.11%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 8: falls at 1.4s, rises at 13.2s */
+@keyframes word-8 {
+  0%, 7.78% { transform: translateY(0px); color: black; }
+  14.44% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  24.44% { transform: translateY(500px); color: aqua; }
+  73.33% { transform: translateY(500px); color: aqua; }
+  80% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  90%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 9: falls at 1.6s, rises at 13s */
+@keyframes word-9 {
+  0%, 8.89% { transform: translateY(0px); color: black; }
+  15.56% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  25.56% { transform: translateY(500px); color: aqua; }
+  72.22% { transform: translateY(500px); color: aqua; }
+  78.89% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  88.89%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 10: falls at 1.8s, rises at 12.8s */
+@keyframes word-10 {
+  0%, 10% { transform: translateY(0px); color: black; }
+  16.67% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  26.67% { transform: translateY(500px); color: aqua; }
+  71.11% { transform: translateY(500px); color: aqua; }
+  77.78% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  87.78%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 11: falls at 2s, rises at 12.6s */
+@keyframes word-11 {
+  0%, 11.11% { transform: translateY(0px); color: black; }
+  17.78% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  27.78% { transform: translateY(500px); color: aqua; }
+  70% { transform: translateY(500px); color: aqua; }
+  76.67% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  86.67%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 12: falls at 2.2s, rises at 12.4s */
+@keyframes word-12 {
+  0%, 12.22% { transform: translateY(0px); color: black; }
+  18.89% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  28.89% { transform: translateY(500px); color: aqua; }
+  68.89% { transform: translateY(500px); color: aqua; }
+  75.56% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  85.56%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 13: falls at 2.4s, rises at 12.2s */
+@keyframes word-13 {
+  0%, 13.33% { transform: translateY(0px); color: black; }
+  20% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  30% { transform: translateY(500px); color: aqua; }
+  67.78% { transform: translateY(500px); color: aqua; }
+  74.44% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  84.44%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 14: falls at 2.6s, rises at 12s */
+@keyframes word-14 {
+  0%, 14.44% { transform: translateY(0px); color: black; }
+  21.11% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  31.11% { transform: translateY(500px); color: aqua; }
+  66.67% { transform: translateY(500px); color: aqua; }
+  73.33% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  83.33%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 15: falls at 2.8s, rises at 11.8s */
+@keyframes word-15 {
+  0%, 15.56% { transform: translateY(0px); color: black; }
+  22.22% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  32.22% { transform: translateY(500px); color: aqua; }
+  65.56% { transform: translateY(500px); color: aqua; }
+  72.22% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  82.22%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 16: falls at 3s, rises at 11.6s */
+@keyframes word-16 {
+  0%, 16.67% { transform: translateY(0px); color: black; }
+  23.33% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  33.33% { transform: translateY(500px); color: aqua; }
+  64.44% { transform: translateY(500px); color: aqua; }
+  71.11% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  81.11%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 17: falls at 3.2s, rises at 11.4s */
+@keyframes word-17 {
+  0%, 17.78% { transform: translateY(0px); color: black; }
+  24.44% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  34.44% { transform: translateY(500px); color: aqua; }
+  63.33% { transform: translateY(500px); color: aqua; }
+  70% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  80%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 18: falls at 3.4s, rises at 11.2s */
+@keyframes word-18 {
+  0%, 18.89% { transform: translateY(0px); color: black; }
+  25.56% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  35.56% { transform: translateY(500px); color: aqua; }
+  62.22% { transform: translateY(500px); color: aqua; }
+  68.89% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  78.89%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 19: falls at 3.6s, rises at 11s */
+@keyframes word-19 {
+  0%, 20% { transform: translateY(0px); color: black; }
+  26.67% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  36.67% { transform: translateY(500px); color: aqua; }
+  61.11% { transform: translateY(500px); color: aqua; }
+  67.78% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  77.78%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 20: falls at 3.8s, rises at 10.8s */
+@keyframes word-20 {
+  0%, 21.11% { transform: translateY(0px); color: black; }
+  27.78% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  37.78% { transform: translateY(500px); color: aqua; }
+  60% { transform: translateY(500px); color: aqua; }
+  66.67% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  76.67%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 21: falls at 4s, rises at 10.6s */
+@keyframes word-21 {
+  0%, 22.22% { transform: translateY(0px); color: black; }
+  28.89% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  38.89% { transform: translateY(500px); color: aqua; }
+  58.89% { transform: translateY(500px); color: aqua; }
+  65.56% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  75.56%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 22: falls at 4.2s, rises at 10.4s */
+@keyframes word-22 {
+  0%, 23.33% { transform: translateY(0px); color: black; }
+  30% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  40% { transform: translateY(500px); color: aqua; }
+  57.78% { transform: translateY(500px); color: aqua; }
+  64.44% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  74.44%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 23: falls at 4.4s, rises at 10.2s */
+@keyframes word-23 {
+  0%, 24.44% { transform: translateY(0px); color: black; }
+  31.11% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  41.11% { transform: translateY(500px); color: aqua; }
+  56.67% { transform: translateY(500px); color: aqua; }
+  63.33% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  73.33%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 24: falls at 4.6s, rises at 10s */
+@keyframes word-24 {
+  0%, 25.56% { transform: translateY(0px); color: black; }
+  32.22% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  42.22% { transform: translateY(500px); color: aqua; }
+  55.56% { transform: translateY(500px); color: aqua; }
+  62.22% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  72.22%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 25: falls at 4.8s, rises at 9.8s */
+@keyframes word-25 {
+  0%, 26.67% { transform: translateY(0px); color: black; }
+  33.33% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  43.33% { transform: translateY(500px); color: aqua; }
+  54.44% { transform: translateY(500px); color: aqua; }
+  61.11% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  71.11%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 26: falls at 5s, rises at 9.6s */
+@keyframes word-26 {
+  0%, 27.78% { transform: translateY(0px); color: black; }
+  34.44% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  44.44% { transform: translateY(500px); color: aqua; }
+  53.33% { transform: translateY(500px); color: aqua; }
+  60% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  70%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 27: falls at 5.2s, rises at 9.4s */
+@keyframes word-27 {
+  0%, 28.89% { transform: translateY(0px); color: black; }
+  35.56% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  45.56% { transform: translateY(500px); color: aqua; }
+  52.22% { transform: translateY(500px); color: aqua; }
+  58.89% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  68.89%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 28: falls at 5.4s, rises at 9.2s */
+@keyframes word-28 {
+  0%, 30% { transform: translateY(0px); color: black; }
+  36.67% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  46.67% { transform: translateY(500px); color: aqua; }
+  51.11% { transform: translateY(500px); color: aqua; }
+  57.78% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  67.78%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 29: falls at 5.6s, rises at 9s */
+@keyframes word-29 {
+  0%, 31.11% { transform: translateY(0px); color: black; }
+  37.78% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  47.78% { transform: translateY(500px); color: aqua; }
+  50% { transform: translateY(500px); color: aqua; }
+  56.67% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  66.67%, 100% { transform: translateY(0px); color: black; }
+}
+
+/* Word 30: falls at 5.8s, rises at 8.8s */
+@keyframes word-30 {
+  0%, 32.22% { transform: translateY(0px); color: black; }
+  38.89% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  48.89% { transform: translateY(500px); color: aqua; }
+  55.56% { transform: translateY(500px); color: rgb(95, 79, 204); }
+  65.56%, 100% { transform: translateY(0px); color: black; }
+}
+
+.lorem-p span:nth-child(1) { animation: word-1 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(2) { animation: word-2 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(3) { animation: word-3 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(4) { animation: word-4 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(5) { animation: word-5 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(6) { animation: word-6 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(7) { animation: word-7 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(8) { animation: word-8 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(9) { animation: word-9 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(10) { animation: word-10 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(11) { animation: word-11 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(12) { animation: word-12 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(13) { animation: word-13 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(14) { animation: word-14 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(15) { animation: word-15 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(16) { animation: word-16 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(17) { animation: word-17 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(18) { animation: word-18 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(19) { animation: word-19 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(20) { animation: word-20 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(21) { animation: word-21 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(22) { animation: word-22 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(23) { animation: word-23 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(24) { animation: word-24 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(25) { animation: word-25 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(26) { animation: word-26 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(27) { animation: word-27 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(28) { animation: word-28 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(29) { animation: word-29 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+.lorem-p span:nth-child(30) { animation: word-30 18s cubic-bezier(0.25, 0.7, 0.3, 1.2) infinite; }
+
+body {
+  animation: color-change 18s ease-in infinite;
+}
