@@ -1,0 +1,233 @@
+.main-container{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.lorem-p{
+  width: 1000px;
+  font-family: monospace;
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+@keyframes down {
+  0%{
+    transform: translateY(0px);
+    color: black;
+
+  }
+
+  40%{
+    color: rgb(95, 79, 204);
+  }
+
+  100% {
+    transform: translateY(500px);
+    color: aqua;
+  }
+  
+}
+
+@keyframes up {
+  0%{
+    transform: translateY(500px);
+    color: aqua;
+  }
+
+  40%{
+    color: rgb(95, 79, 204);
+  }
+
+
+  100% {
+    transform: translateY(0px);
+    color: black;
+  }
+  
+}
+
+
+@keyframes color-change {
+      0% {
+        background-color: rgb(255, 255, 255);
+      }
+      20% {
+        background-color: rgb(207, 168, 29);
+      }
+      40% {
+        background-color: rgb(234, 50, 50);
+    
+      }
+      60% {
+        background-color: rgb(207, 168, 29);
+      }
+      80% {
+        background-color: rgb(255, 255, 255);
+      }
+}
+
+
+.lorem-p span{
+  display: inline-block;
+}
+
+.lorem-p span:nth-child(1) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 14.6s forwards;
+}
+
+.lorem-p span:nth-child(2) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 0.2s forwards, 
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 14.4s forwards; 
+}
+
+.lorem-p span:nth-child(3) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 0.4s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 14.2s forwards; 
+}
+
+.lorem-p span:nth-child(4) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 0.6s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 14s forwards; 
+}
+
+.lorem-p span:nth-child(5) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 0.8s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 13.8s forwards; 
+}
+
+.lorem-p span:nth-child(6) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 1s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 13.6s forwards; 
+}
+
+.lorem-p span:nth-child(7) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 1.2s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 13.4s forwards; 
+}
+
+.lorem-p span:nth-child(8) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 1.4s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 13.2s forwards; 
+}
+
+.lorem-p span:nth-child(9) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 1.6s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 13s forwards; 
+}
+
+.lorem-p span:nth-child(10) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 1.8s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 12.8s forwards; 
+}
+
+.lorem-p span:nth-child(11) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 2s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 12.6s forwards; 
+}
+
+.lorem-p span:nth-child(12) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 2.2s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 12.4s forwards; 
+}
+
+.lorem-p span:nth-child(13) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 2.4s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 12.2s forwards; 
+}
+
+.lorem-p span:nth-child(14) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 2.6s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 12s forwards; 
+}
+
+.lorem-p span:nth-child(15) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 2.8s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 11.8s forwards; 
+}
+
+.lorem-p span:nth-child(16) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 3s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 11.6s forwards; 
+}
+
+.lorem-p span:nth-child(17) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 3.2s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 11.4s forwards;
+}
+
+.lorem-p span:nth-child(18) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 3.4s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 11.2s forwards;
+}
+
+.lorem-p span:nth-child(19) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 3.6s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 11s forwards;
+}
+
+.lorem-p span:nth-child(20) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 3.8s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 10.8s forwards;
+}
+
+.lorem-p span:nth-child(21) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 4s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 10.6s forwards;
+}
+
+.lorem-p span:nth-child(22) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 4.2s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 10.4s forwards;
+}
+
+.lorem-p span:nth-child(23) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 4.4s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 10.2s forwards;
+}
+
+.lorem-p span:nth-child(24) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 4.6s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 10s forwards;
+}
+
+.lorem-p span:nth-child(25) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 4.8s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 9.8s forwards;
+}
+
+.lorem-p span:nth-child(26) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 5s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 9.6s forwards;
+}
+
+.lorem-p span:nth-child(27) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 5.2s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 9.4s forwards;
+}
+
+.lorem-p span:nth-child(28) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 5.4s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 9.2s forwards;
+}
+
+.lorem-p span:nth-child(29) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 5.6s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 9s forwards;       
+}
+
+.lorem-p span:nth-child(30) {
+  animation: down 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 5.8s forwards,
+             up 3s cubic-bezier(0.25, 0.7, 0.3, 1.2) 8.8s forwards;         
+}
+
+
+
+body {
+  animation: color-change 18s ease-in forwards
+}
+
+
+
