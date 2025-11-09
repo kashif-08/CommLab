@@ -1,3 +1,34 @@
 .button-abs{
   position: absolute;
 }
+
+
+ @keyframes rotation {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg); 
+      }
+    }
+
+.button-clicked{
+  animation: rotation 2s linear infinite;
+  cursor: pointer;
+}
+
+
+@keyframes shake {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-1.5px, 0); }
+  50%  { transform: translate(0, 0); }
+  75%  { transform: translate(1.5px, 0); }
+  99.999% { transform: translate(0, 0); }
+}
+
+
+
+.link-shakes {
+  animation: shake 0.15s linear infinite;
+  cursor: pointer;
+}

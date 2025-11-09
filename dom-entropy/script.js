@@ -227,20 +227,22 @@ function buttonAppears () {
   newButton.style.cursor = 'pointer';
   newButton.style.zIndex = '50';
   document.body.append(newButton);
+
+  newButton.onclick = genButtonClicked;
 }
 
 function linkAppears () {
   let newLink = document.createElement('a');
   newLink.innerText = 'link';
-  newLink.href = "https://classroom.google.com";
-  newLink.target="_blank";
   newLink.style.color = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
-  newLink.style.fontSize = `${Math.floor(Math.random() * 8) + 8}px`;
+  newLink.style.fontSize = `${Math.floor(Math.random() * 8) + 12}px`;
   newLink.style.position = 'fixed';
   newLink.style.top = `${Math.floor(Math.random() * (window.innerHeight - 50))}px`;
   newLink.style.left = `${Math.floor(Math.random() * (window.innerWidth - 50))}px`;
   newLink.style.zIndex = '50';
   document.body.append(newLink);
+
+  newLink.onclick = linkShakes;
 }
 
 
@@ -279,4 +281,12 @@ function removeAllButtons () {
   textBoxButton.remove();
   headingButton.remove();
   startButtonElem.remove();
+}
+
+function genButtonClicked () {
+  this.classList.toggle('button-clicked');
+}
+
+function linkShakes () {
+  this.classList.toggle ('link-shakes')
 }
