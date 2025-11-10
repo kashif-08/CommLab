@@ -264,8 +264,22 @@ function textBoxAppears () {
 
 function headingAppears () {
 
+  let word0 = '@keyframes';
+  let word1 = 'innerText';
+  let word2 = 'Math.random()';
+  let word3 = 'onclick';
+  let word4 = 'class';
+  let word5 = 'variable';
+  let word6 = 'function';
+  let word7 = 'div';
+  let word8 = 'padding';
+  let word9 = 'console.log()';
+  
+  let randomNum = Math.floor(Math.random() * 10);
+  let randomWord = eval('word' + randomNum);
+
   let newHeading = document.createElement('h2');
-  newHeading.innerText = 'heading';
+  newHeading.innerText = randomWord;
   newHeading.style.color = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
   newHeading.style.position = 'fixed';
   newHeading.style.top = `${Math.floor(Math.random() * (window.innerHeight - 50))}px`;
