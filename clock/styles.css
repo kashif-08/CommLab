@@ -1,0 +1,76 @@
+body{
+  margin: 0px;
+}
+
+.button-normal, .button-retro {
+  border: solid 1px black;
+  font-family: monospace;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-top: 16px;
+  font-size: 11px;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.button-normal{
+  margin-left: 16px;
+  background-color: rgb(6, 6, 6);
+  color: white;
+  border: solid 1px black;
+}
+
+body.retro .button-normal {
+  border-color: white;
+}
+
+body.retro .button-retro {
+  border-color: white;  
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 56px;
+  height: 100vh;
+}
+
+.seconds, .minutes, .hours{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.container-seconds, .container-minutes, .container-hours{
+  width: 140px;
+}
+
+.check-box {
+  margin: 2px;
+  width: 16px;
+  height: 16px;
+}
+
+body.retro .check-box {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 2px;
+  width: 16px;
+  height: 16px;
+  border: none;
+  outline: none;
+  background: #003300;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+body.retro .check-box:checked {
+  background: #00ff00;
+  box-shadow: 0 0 5px #00ff00;
+}
+
+body.retro {
+  background-color: #000000;
+}
