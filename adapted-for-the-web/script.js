@@ -14,6 +14,80 @@ let teddyNumberLeft4 = document.querySelector('.teddy-number-l4');
 let teddyNumberLeft6 = document.querySelector('.teddy-number-l6');
 let teddyNumberLeft7 = document.querySelector('.teddy-number-l7');
 let teddyNumberRight2 = document.querySelector('.teddy-number-r2');
+let overlay = document.querySelector('.overlay');
+let yesButton = document.querySelector('.yes-button');
+let noButton = document.querySelector('.no-button');
+
+// Yes button
+yesButton.addEventListener('click', function () {
+  overlay.classList.add('hidden');
+});
+
+// No button - show introduction
+noButton.addEventListener('click', function () {
+  // Create the introduction screen
+  let introScreen = document.createElement('div');
+  introScreen.className = 'intro-screen';
+  introScreen.innerHTML = `
+        <div class="intro-content">
+            <h1>Memento (2000)</h1>
+            <div class="intro-text">
+                <p>Memento is a 2000 American neo-noir psychological thriller film written and directed by Christopher Nolan, based on the short story "Memento Mori" by his brother Jonathan Nolan. The film follows Leonard Shelby (Guy Pearce), a man with anterograde amnesia—the inability to form new memories—as he searches for the person who attacked him and murdered his wife.</p>
+                
+                <p>What makes Memento revolutionary is its narrative structure. The film is presented in two sequences: one in color that moves backward in time, and another in black and white that moves forward. These sequences meet at the film's climax, creating a puzzle that challenges viewers to piece together the truth alongside the protagonist.</p>
+                
+                <p>Leonard's condition forces him to use Polaroid photographs, notes, and tattoos to track information he can't remember. His most important notes are tattooed directly onto his body—"John G. raped and murdered my wife" is inscribed over his heart. But as the story unfolds in reverse, we begin to question everything we've been told.</p>
+                
+                <p>The film explores themes of memory, identity, and the nature of truth. Without the ability to form new memories, Leonard lives in a perpetual present, unable to learn from his experiences or recognize the people manipulating him. Each scene resets his understanding of the world, making him both the hunter and the hunted.</p>
+                
+                <p>Nolan's backwards narrative isn't just a gimmick—it places the audience in Leonard's position. We're as confused and disoriented as he is, discovering information in reverse and struggling to understand how we arrived at each moment. The film asks: if you can't trust your memories, who can you trust? And more disturbingly: who are you?</p>
+                
+                <p>Memento received widespread critical acclaim and was nominated for two Academy Awards. It's considered one of the greatest films of the 2000s and established Christopher Nolan as a major filmmaking talent. The film's influence can be seen in countless subsequent movies and TV shows that play with non-linear storytelling.</p>
+                
+                <p>But the real genius of Memento lies in its final revelation—a truth that recontextualizes everything we've seen and forces us to question the very nature of justice, revenge, and self-deception. Leonard isn't just hunting his wife's killer. He's trapped in a cycle of his own making, unable to escape because he literally can't remember why he keeps repeating the same actions.</p>
+                
+                <p>The film leaves us with an unsettling question: Is it better to live in painful truth or comforting lies? Leonard chooses his own reality, selecting which facts to remember and which to forget. In doing so, he becomes both victim and architect of his own fate—a man who has turned his disability into a tool for eternal vengeance, even if that vengeance is hollow.</p>
+            </div>
+            <div class="intro-buttons">
+                <button class="continue-reading-btn">Continue Reading</button>
+                <button class="watch-video-btn">Watch Video Instead</button>
+            </div>
+        </div>
+    `;
+
+  // Add to overlay
+  overlay.innerHTML = '';
+  overlay.appendChild(introScreen);
+
+  //  Continue Reading button
+  let continueBtn = introScreen.querySelector('.continue-reading-btn');
+  continueBtn.addEventListener('click', function () {
+    introScreen.querySelector('.intro-content').classList.add('scrollable');
+    continueBtn.style.display = 'none';
+    document.querySelector('.watch-video-btn').textContent = 'Done - Start Experience';
+    document.querySelector('.watch-video-btn').addEventListener('click', function () {
+      overlay.classList.add('hidden');
+    });
+  });
+
+  //  Watch Video button
+  let videoBtn = introScreen.querySelector('.watch-video-btn');
+  videoBtn.addEventListener('click', function () {
+  overlay.innerHTML = `
+            <div class="video-overlay-container">
+                <video class="fullscreen-video" src="assets/memento-explained.mp4" controls autoplay></video>
+                <button class="close-video-btn">Start Experience</button>
+            </div>
+        `;
+
+    let closeBtn = overlay.querySelector('.close-video-btn');
+    closeBtn.addEventListener('click', function () {
+      overlay.classList.add('hidden');
+      overlay.innerHTML = '';
+    });
+  });
+});
+
 
 
 window.addEventListener("load", function () {
@@ -86,26 +160,26 @@ leftSeventh.forEach(function (word, index) {
 
 let startedMoving = false;
 
-function handleRemember(){
+function handleRemember() {
   let percentage = getScrollPercentageLeft();
-console.log(percentage)
+  console.log(percentage)
   let startMovingPercX = 34.4;
   let arrivePercX = 35.9;
-  let p2 = (percentage-startMovingPercX)/(arrivePercX-startMovingPercX)
-  if(p2 < 0){
+  let p2 = (percentage - startMovingPercX) / (arrivePercX - startMovingPercX)
+  if (p2 < 0) {
     p2 = 0
-  }else if(p2>1){
+  } else if (p2 > 1) {
     p2 = 1;
-  }else if(p2>0 && !startedMoving){
+  } else if (p2 > 0 && !startedMoving) {
     startedMoving = true
-  } 
+  }
 
   let startMovingPercY = 34.4;
   let arrivePercY = 35.9;
-  let p3 = (percentage-startMovingPercY)/(arrivePercY-startMovingPercY)
-  if(p3 < 0){
+  let p3 = (percentage - startMovingPercY) / (arrivePercY - startMovingPercY)
+  if (p3 < 0) {
     p3 = 0
-  }else if(p3>1){
+  } else if (p3 > 1) {
     p3 = 1;
   }
 
@@ -117,32 +191,32 @@ console.log(percentage)
   let rightRememberX = rightRememberBox.x;
 
   let leftRememberBox = document.querySelector("#left-side-remember").getBoundingClientRect();
-  
 
-    
+
+
   let leftRememberY = leftRememberBox.y;
-  
+
   let leftRememberX = leftRememberBox.x;
 
-  let fixedX = leftRememberX +   ( p2*   (rightRememberBox.x-leftRememberX) )
-  let fixedY = leftRememberY +   ( p3*   (rightRememberBox.y-leftRememberY) )
+  let fixedX = leftRememberX + (p2 * (rightRememberBox.x - leftRememberX))
+  let fixedY = leftRememberY + (p3 * (rightRememberBox.y - leftRememberY))
 
-  let fixed_remember =  document.querySelector("#fixed-remember");
+  let fixed_remember = document.querySelector("#fixed-remember");
   fixed_remember.style.position = "fixed";
-  fixed_remember.style.top = window.innerHeight/2 + "px";
+  fixed_remember.style.top = window.innerHeight / 2 + "px";
   fixed_remember.style.left = fixedX + "px";
   fixed_remember.style.top = fixedY + "px";
 
-  let colValue = 216 -  ( p2 *  (216-34) ) 
-  fixed_remember.style.color = 'rgb('+colValue+', '+colValue+', '+colValue+')';
+  let colValue = 216 - (p2 * (216 - 34))
+  fixed_remember.style.color = 'rgb(' + colValue + ', ' + colValue + ', ' + colValue + ')';
 
-  
+
 
 
   // fixed_remember.style.top = // between leftRememberY and rightRememberY using percentage
   // fixed_remember.style.left = // between leftRememberX and rightRememberX using percentage
 
-//left percentage = 33.5 start ; 37.3 end
+  //left percentage = 33.5 start ; 37.3 end
   // right percentage = 62.4
 
 }
@@ -153,7 +227,7 @@ leftSide.addEventListener('scroll', function () {
 
 
   handleRemember()
-  
+
 
   // console.log(percentage);
   let maxScrollRight = rightSide.scrollHeight - window.innerHeight;
@@ -246,23 +320,23 @@ leftSide.addEventListener('scroll', function () {
     movingText.style.left = leftPosition + '%';
   }
 
-  if(percentage>10.4){
+  if (percentage > 10.4) {
     movingText.innerText = "I have a serious condition";
-  } else if (percentage>10.2) {
+  } else if (percentage > 10.2) {
     movingText.innerText = "Anterograde Amnesia"
   }
-   else if (percentage>9.1){
+  else if (percentage > 9.1) {
     movingText.innerText = "I have a serious condition"
   }
-   else if (percentage>8.9){
+  else if (percentage > 8.9) {
     movingText.innerText = "Anterograde Amnesia"
   }
-   else if (percentage>7.8){
+  else if (percentage > 7.8) {
     movingText.innerText = "I have a serious condition"
   }
-  else if(percentage>7.6){
+  else if (percentage > 7.6) {
     movingText.innerText = "Anterograde Amnesia"
-  }else if(percentage>7.2){
+  } else if (percentage > 7.2) {
     movingText.innerText = "I have a serious condition"
   }
 
@@ -347,7 +421,7 @@ rightSide.addEventListener('scroll', function () {
   leftSide.scrollTop = maxScrollLeft - ((percentage / 100) * maxScrollLeft);
   // console.log(percentage, maxScrollRight, rightSide.scrollTop);
 
-    if (percentage < 85) {
+  if (percentage < 85) {
     rightFirst.forEach(function (word) {
       word.style.opacity = '1';
     });
@@ -369,7 +443,7 @@ rightSide.addEventListener('scroll', function () {
   }
 
 
-   if (percentage < 63) {
+  if (percentage < 63) {
     rightThird.forEach(function (word) {
       word.style.opacity = '1';
     });
@@ -380,7 +454,7 @@ rightSide.addEventListener('scroll', function () {
   }
 
   ///not working :/
-   if (percentage < 52) {
+  if (percentage < 52) {
     videoTrigger.forEach(function (word) {
       word.style.opacity = '1';
     });
@@ -391,7 +465,7 @@ rightSide.addEventListener('scroll', function () {
   }
 
 
-   if (percentage < 41) {
+  if (percentage < 41) {
     rightFourth.forEach(function (word) {
       word.style.opacity = '1';
     });
@@ -402,7 +476,7 @@ rightSide.addEventListener('scroll', function () {
   }
 
 
-   if (percentage < 30) {
+  if (percentage < 30) {
     rightFifth.forEach(function (word) {
       word.style.opacity = '1';
     });
@@ -412,7 +486,7 @@ rightSide.addEventListener('scroll', function () {
     });
   }
 
-   if (percentage < 19) {
+  if (percentage < 19) {
     rightSixth.forEach(function (word) {
       word.style.opacity = '1';
     });
@@ -435,34 +509,34 @@ rightSide.addEventListener('scroll', function () {
 });
 
 
-videoPlay.addEventListener('mouseover', function(){
+videoPlay.addEventListener('mouseover', function () {
   // Add sleeping class for blur and spinning
   videoPlay.classList.add('sleeping');
-  
+
   // Give each word a slightly different rotation speed
   const spans = videoPlay.querySelectorAll('span');
-  spans.forEach(function(span) {
+  spans.forEach(function (span) {
     const randomDuration = 2.5 + Math.random() * 1.5;
     span.style.animationDuration = randomDuration + 's';
   });
-  
+
   // Existing video code
   video.style.opacity = '1';
   video.play();
   video.parentElement.style.padding = '0px';
 })
 
-videoPlay.addEventListener('mouseout', function(){
+videoPlay.addEventListener('mouseout', function () {
   // Remove sleeping class to stop blur and spinning
   videoPlay.classList.remove('sleeping');
-  
+
   // Stop animations
   const spans = videoPlay.querySelectorAll('span');
-  spans.forEach(function(span) {
+  spans.forEach(function (span) {
     span.style.animation = 'none';
     span.style.animation = '';
   });
-  
+
   // Existing video code
   video.style.opacity = '0';
   video.pause();
@@ -470,46 +544,46 @@ videoPlay.addEventListener('mouseout', function(){
 })
 
 //phone call
-phoneCallPlay.addEventListener('mouseover', function(){
+phoneCallPlay.addEventListener('mouseover', function () {
   phoneCallAudio.play();
 });
 
-phoneCallPlay.addEventListener('mouseout', function(){
+phoneCallPlay.addEventListener('mouseout', function () {
   phoneCallAudio.pause();
   // phoneCallAudio.currentTime = 0; // optional: reset to beginning
 });
 
 
-leftFifthPara.addEventListener('mouseover', function(){
+leftFifthPara.addEventListener('mouseover', function () {
   leftFifthPara.style.cursor = 'pointer';
   let span4 = leftFifthPara.querySelector('span:nth-child(4)');
   let span6 = leftFifthPara.querySelector('span:nth-child(7)');
   let span12 = leftFifthPara.querySelector('span:nth-child(13)');
   let span15 = leftFifthPara.querySelector('span:nth-child(16)');
-  
+
   span4.classList.add('flipping');
   span6.classList.add('flipping');
   span12.classList.add('flipping');
   span15.classList.add('flipping');
-  
+
   span4.textContent = 'myself';
   span6.textContent = 'I';
   span12.textContent = 'my';
   span15.textContent = 'me';
 });
 
-leftFifthPara.addEventListener('mouseout', function() {
+leftFifthPara.addEventListener('mouseout', function () {
   leftFifthPara.style.cursor = 'pointer';
   let span4 = leftFifthPara.querySelector('span:nth-child(4)');
   let span6 = leftFifthPara.querySelector('span:nth-child(7)');
   let span12 = leftFifthPara.querySelector('span:nth-child(13)');
   let span15 = leftFifthPara.querySelector('span:nth-child(16)');
-  
+
   span4.classList.remove('flipping');
   span6.classList.remove('flipping');
   span12.classList.remove('flipping');
   span15.classList.remove('flipping');
-  
+
   span4.textContent = 'Sammy';
   span6.textContent = 'he';
   span12.textContent = 'his';
@@ -519,29 +593,29 @@ leftFifthPara.addEventListener('mouseout', function() {
 
 //
 
-RightSixPara.addEventListener('mouseover', function(){
+RightSixPara.addEventListener('mouseover', function () {
   RightSixPara.style.cursor = 'pointer';
   let span8 = RightSixPara.querySelector('span:nth-child(8)');
   let span13 = RightSixPara.querySelector('span:nth-child(13)');
 
   // span8.style.transitionDelay = '0s';  // Reset delay but creates issues with initial anim
   // span13.style.transitionDelay = '0s'; // Reset delay but creates issues with initial anim
-  
+
   span8.classList.add('flipping');
   span13.classList.add('flipping');
-  
+
   span8.textContent = 'Lies';
   span13.textContent = 'Lies';
 });
 
-RightSixPara.addEventListener('mouseout', function() {
+RightSixPara.addEventListener('mouseout', function () {
   RightSixPara.style.cursor = 'pointer';
   let span8 = RightSixPara.querySelector('span:nth-child(8)');
   let span13 = RightSixPara.querySelector('span:nth-child(13)');
-  
+
   span8.classList.remove('flipping');
   span13.classList.remove('flipping');
-  
+
   span8.textContent = 'Says';
   span13.textContent = 'Says';
 
@@ -553,27 +627,27 @@ RightSixPara.addEventListener('mouseout', function() {
 const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 let plateTimer;
 
-plateNumber.addEventListener('mouseover', function(){
+plateNumber.addEventListener('mouseover', function () {
   let count = 0;
-  
-  plateTimer = setInterval(function() {
+
+  plateTimer = setInterval(function () {
     plateNumber.textContent = '';
-    for(let i = 0; i < 8; i++){
+    for (let i = 0; i < 8; i++) {
       plateNumber.textContent += chars[Math.floor(Math.random() * chars.length)];
     }
     plateNumber.style.color = '#ff6b6b';
     plateNumber.style.cursor = 'pointer';
     plateNumber.style.textDecoration = 'none';
-    
+
     count++;
-    if(count > 20){
+    if (count > 20) {
       clearInterval(plateTimer);
       plateNumber.textContent = 'SG13 7IU';
     }
   }, 30);
 });
 
-plateNumber.addEventListener('mouseout', function(){
+plateNumber.addEventListener('mouseout', function () {
   clearInterval(plateTimer);
   plateNumber.textContent = 'number';
   plateNumber.style.color = 'rgb(34, 34, 34)';
@@ -584,26 +658,26 @@ plateNumber.addEventListener('mouseout', function(){
 //teddy l4
 let teddyTimer4;
 
-teddyNumberLeft4.addEventListener('mouseover', function(){
+teddyNumberLeft4.addEventListener('mouseover', function () {
   let count = 0;
-  
-  teddyTimer4 = setInterval(function() {
+
+  teddyTimer4 = setInterval(function () {
     teddyNumberLeft4.textContent = '';
-    for(let i = 0; i < 8; i++){
+    for (let i = 0; i < 8; i++) {
       teddyNumberLeft4.textContent += chars[Math.floor(Math.random() * chars.length)];
     }
     teddyNumberLeft4.style.color = '#ff6b6b';
     teddyNumberLeft4.style.cursor = 'pointer';
-    
+
     count++;
-    if(count > 20){
+    if (count > 20) {
       clearInterval(teddyTimer4);
       teddyNumberLeft4.textContent = 'SG13 7IU';
     }
   }, 30);
 });
 
-teddyNumberLeft4.addEventListener('mouseout', function(){
+teddyNumberLeft4.addEventListener('mouseout', function () {
   clearInterval(teddyTimer4);
   teddyNumberLeft4.textContent = 'Teddy';
   teddyNumberLeft4.style.color = 'rgb(217, 216, 216)';
@@ -615,26 +689,26 @@ teddyNumberLeft4.addEventListener('mouseout', function(){
 //teddy l6
 let teddyTimer6;
 
-teddyNumberLeft6.addEventListener('mouseover', function(){
+teddyNumberLeft6.addEventListener('mouseover', function () {
   let count = 0;
-  
-  teddyTimer6 = setInterval(function() {
+
+  teddyTimer6 = setInterval(function () {
     teddyNumberLeft6.textContent = '';
-    for(let i = 0; i < 8; i++){
+    for (let i = 0; i < 8; i++) {
       teddyNumberLeft6.textContent += chars[Math.floor(Math.random() * chars.length)];
     }
     teddyNumberLeft6.style.color = '#ff6b6b';
     teddyNumberLeft6.style.cursor = 'pointer';
-    
+
     count++;
-    if(count > 20){
+    if (count > 20) {
       clearInterval(teddyTimer6);
       teddyNumberLeft6.textContent = 'SG13 7IU';
     }
   }, 30);
 });
 
-teddyNumberLeft6.addEventListener('mouseout', function(){
+teddyNumberLeft6.addEventListener('mouseout', function () {
   clearInterval(teddyTimer6);
   teddyNumberLeft6.textContent = 'Teddy';
   teddyNumberLeft6.style.color = 'rgb(217, 216, 216)';
@@ -646,26 +720,26 @@ teddyNumberLeft6.addEventListener('mouseout', function(){
 //teddy l7
 let teddyTimer7;
 
-teddyNumberLeft7.addEventListener('mouseover', function(){
+teddyNumberLeft7.addEventListener('mouseover', function () {
   let count = 0;
-  
-  teddyTimer7 = setInterval(function() {
+
+  teddyTimer7 = setInterval(function () {
     teddyNumberLeft7.textContent = '';
-    for(let i = 0; i < 8; i++){
+    for (let i = 0; i < 8; i++) {
       teddyNumberLeft7.textContent += chars[Math.floor(Math.random() * chars.length)];
     }
     teddyNumberLeft7.style.color = '#ff6b6b';
     teddyNumberLeft7.style.cursor = 'pointer';
-    
+
     count++;
-    if(count > 20){
+    if (count > 20) {
       clearInterval(teddyTimer7);
       teddyNumberLeft7.textContent = 'SG13 7IU';
     }
   }, 30);
 });
 
-teddyNumberLeft7.addEventListener('mouseout', function(){
+teddyNumberLeft7.addEventListener('mouseout', function () {
   clearInterval(teddyTimer7);
   teddyNumberLeft7.textContent = 'Teddy';
   teddyNumberLeft7.style.color = 'rgb(217, 216, 216)';
@@ -677,26 +751,26 @@ teddyNumberLeft7.addEventListener('mouseout', function(){
 //teddy r7
 let teddyTimerR2;
 
-teddyNumberRight2.addEventListener('mouseover', function(){
+teddyNumberRight2.addEventListener('mouseover', function () {
   let count = 0;
-  
-  teddyTimerR2 = setInterval(function() {
+
+  teddyTimerR2 = setInterval(function () {
     teddyNumberRight2.textContent = '';
-    for(let i = 0; i < 8; i++){
+    for (let i = 0; i < 8; i++) {
       teddyNumberRight2.textContent += chars[Math.floor(Math.random() * chars.length)];
     }
     teddyNumberRight2.style.color = '#ff6b6b';
     teddyNumberRight2.style.cursor = 'pointer';
-    
+
     count++;
-    if(count > 20){
+    if (count > 20) {
       clearInterval(teddyTimerR2);
       teddyNumberRight2.textContent = 'SG13 7IU';
     }
   }, 30);
 });
 
-teddyNumberRight2.addEventListener('mouseout', function(){
+teddyNumberRight2.addEventListener('mouseout', function () {
   clearInterval(teddyTimerR2);
   teddyNumberRight2.textContent = 'Teddy';
   teddyNumberRight2.style.color = 'rgb(34, 34, 34)';

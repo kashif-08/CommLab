@@ -122,19 +122,19 @@ p {
   font-family: "DM Mono", monospace;
 }
 
-#fixed-remember{
+#fixed-remember {
   color: rgb(217, 216, 216);
   font-family: "DM Mono", monospace;
   font-size: 20px;
   pointer-events: none;
 }
 
-#left-side-remember{
+#left-side-remember {
   /* opacity: 0; */
   visibility: hidden;
 }
 
-#right-side-remember{
+#right-side-remember {
   /* opacity: 0; */
   visibility: hidden;
 }
@@ -155,7 +155,7 @@ p {
 .story-title-left {
   color: rgb(216, 216, 216);
   font-family: "DM Mono", monospace;
-  
+
 }
 
 .left-distinct-text {
@@ -238,8 +238,7 @@ p {
 .left-four span,
 .left-five span,
 .left-six span,
-.left-seven span
-{
+.left-seven span {
   display: inline-block;
   opacity: 0;
   transition: opacity 0.4s ease-out;
@@ -252,15 +251,14 @@ p {
 .right-five span,
 .right-six span,
 .right-seven span,
-.video-trigger span
-{
+.video-trigger span {
   display: inline-block;
   opacity: 0;
   transition: opacity 0.3s ease-out;
 }
 
 
-.video{
+.video {
   opacity: 0;
   width: 100%;
   height: 100%;
@@ -293,12 +291,13 @@ p {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-.flexEnd{
+.flexEnd {
   justify-content: flex-end;
 }
 
@@ -311,7 +310,7 @@ p {
 .left-five span.flipping {
   transform: rotateY(360deg);
   opacity: 0;
-  color: #ff6b6b; 
+  color: #ff6b6b;
 }
 
 .right-six span {
@@ -323,7 +322,7 @@ p {
 .right-six span.flipping {
   transform: rotateY(360deg);
   opacity: 0;
-  color: #ff6b6b; 
+  color: #ff6b6b;
 }
 
 .left-five span:nth-child(4) {
@@ -378,15 +377,18 @@ p {
 
 
 @keyframes subtleLighten {
-  0%, 100% {
+
+  0%,
+  100% {
     filter: brightness(1);
   }
+
   50% {
     filter: brightness(2.1);
   }
 }
 
-.plate-number, 
+.plate-number,
 .teddy-number-l4,
 .teddy-number-l6,
 .teddy-number-l7 {
@@ -398,20 +400,168 @@ p {
 
 
 @keyframes subtlePulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.7;
   }
+
   50% {
     opacity: 1;
   }
 }
 
 .phone-call,
-.teddy-number-l4,
-.teddy-number-l6,
-.teddy-number-l7 {
+.teddy-number-r2 {
   font-style: italic;
   cursor: pointer;
   display: inline-block;
   animation: subtlePulse 3s ease-in-out infinite;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(134, 134, 134);
+}
+
+.overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.overlay-question-title{
+  font-size: 56px;
+  font-family: "Caveat", cursive;
+}
+
+.yes-no-answers{
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.yes-button, .no-button{
+  font-size: 24px;
+  font-family: "Caveat", cursive;
+  width: 100px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+}
+
+.yes-button:hover, .no-button:hover{
+  opacity: 0.8;
+}
+
+.overlay-sub-parent{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+
+
+
+.intro-screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.intro-content {
+    border-radius: 12px;
+    padding: 184px;
+    /* max-width: 800px; */
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-content h1 {
+    font-family: "Caveat", cursive;
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.intro-text {
+    flex: 1;
+    overflow: hidden;
+    margin-bottom: 20px;
+    color: #444;
+    line-height: 1.8;
+    font-size: 16px;
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+.intro-content.scrollable .intro-text {
+    overflow-y: auto;
+    mask-image: none;
+}
+
+.intro-text p {
+    margin-bottom: 20px;
+    font-family: "Caveat", cursive;
+    font-size: 24px;
+}
+
+.intro-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.continue-reading-btn,
+.watch-video-btn {
+    font-size: 18px;
+    font-family: "Caveat", cursive;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: white;
+    color: black;
+}
+
+.video-overlay-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.fullscreen-video {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.close-video-btn {
+    font-size: 20px;
+    font-family: "Caveat", cursive;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: white;
+    color: #333;
 }
