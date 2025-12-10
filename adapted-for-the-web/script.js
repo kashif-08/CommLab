@@ -67,13 +67,14 @@ noButton.addEventListener('click', function () {
     document.querySelector('.watch-video-btn').textContent = 'Done - Start Experience';
     document.querySelector('.watch-video-btn').addEventListener('click', function () {
       overlay.classList.add('hidden');
+      overlay.innerHTML = '';
     });
   });
 
   //  Watch Video button
   let videoBtn = introScreen.querySelector('.watch-video-btn');
   videoBtn.addEventListener('click', function () {
-  overlay.innerHTML = `
+    overlay.innerHTML = `
             <div class="video-overlay-container">
                 <video class="fullscreen-video" src="assets/memento-explained.mp4" controls autoplay></video>
                 <button class="close-video-btn">Start Experience</button>
@@ -371,7 +372,7 @@ rightFirst.forEach(function (word, index) {
 //2
 let rightSecond = document.querySelectorAll('.right-two span');
 rightSecond.forEach(function (word, index) {
-word.style.transitionDelay = `${(rightSecond.length - index - 1) * 0.03}s`;
+  word.style.transitionDelay = `${(rightSecond.length - index - 1) * 0.03}s`;
 });
 
 //3
