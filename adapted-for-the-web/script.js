@@ -371,7 +371,7 @@ rightFirst.forEach(function (word, index) {
 //2
 let rightSecond = document.querySelectorAll('.right-two span');
 rightSecond.forEach(function (word, index) {
-  word.style.transitionDelay = `${(rightSecond.length - index - 1) * 0.03}s`;
+word.style.transitionDelay = `${(rightSecond.length - index - 1) * 0.03}s`;
 });
 
 //3
@@ -777,10 +777,7 @@ teddyNumberRight2.addEventListener('mouseout', function () {
   teddyNumberRight2.style.cursor = 'pointer';
 });
 
-// video text animation issue
-// remember word issue
-// teddy word issue
-// i have disease part
+
 
 
 

@@ -18,6 +18,7 @@ p {
   font-family: "Caveat", cursive;
   white-space: nowrap;
   left: -100%;
+  pointer-events: none;
 }
 
 .left,
@@ -304,11 +305,11 @@ p {
 .left-five span {
   display: inline-block;
   transform-style: preserve-3d;
-  transition: transform 0.6s ease, opacity 0.3s ease, color 0.3s ease;
+  transition: transform 0.9s ease, opacity 0.9s ease, color 0.9s ease;
 }
 
 .left-five span.flipping {
-  transform: rotateY(360deg);
+  transform: rotateY(720deg);
   opacity: 0;
   color: #ff6b6b;
 }
@@ -316,108 +317,52 @@ p {
 .right-six span {
   display: inline-block;
   transform-style: preserve-3d;
-  transition: transform 0.6s ease, opacity 0.3s ease, color 0.3s ease;
+  transition: transform 0.9s ease, opacity 0.9s ease, color 0.9s ease;
 }
 
 .right-six span.flipping {
-  transform: rotateY(360deg);
+  transform: rotateY(720deg);
   opacity: 0;
   color: #ff6b6b;
 }
 
-.left-five span:nth-child(4) {
-  transition-delay: 0s;
+
+.plate-number,
+.teddy-number-r2 {
+  font-style: italic;
+  cursor: pointer;
+  animation: subtleGlow 3s ease-in-out infinite;
 }
 
-.left-five span:nth-child(6) {
-  transition-delay: 0.1s;
+
+@keyframes subtleGlow {
+  0%, 100% {
+    text-shadow: 0 0 2cm currentColor;
+  }
+  50% {
+    text-shadow: 0 0 8px currentColor;
+  }
 }
 
-.left-five span:nth-child(12) {
-  transition-delay: 0.2s;
-}
-
-.left-five span:nth-child(15) {
-  transition-delay: 0.3s;
-}
-
-/* 
-.phone-call,
-.plate-number, 
 .teddy-number-l4,
 .teddy-number-l6,
 .teddy-number-l7,
-.teddy-number-r2 {
+.phone-call {
   font-style: italic;
   cursor: pointer;
-  font-weight: bold;
+  animation: subtlePulse 3s ease-in-out infinite;
+  text-decoration: underline;
 }
-
-.phone-call,
-.teddy-number-l4,
-.teddy-number-l6,
-.teddy-number-l7 {
-  font-style: italic;
-  cursor: pointer;
-  font-weight: lighter;
-  color: rgb(172, 172, 172);
-}
-
-.plate-number, 
-.teddy-number-r2 {
-  font-style: italic;
-  cursor: pointer;
-  font-weight: normal;
-  color: black;
-}
-
- */
-
-
-
-
-@keyframes subtleLighten {
-
-  0%,
-  100% {
-    filter: brightness(1);
-  }
-
-  50% {
-    filter: brightness(2.1);
-  }
-}
-
-.plate-number,
-.teddy-number-l4,
-.teddy-number-l6,
-.teddy-number-l7 {
-  font-style: italic;
-  cursor: pointer;
-  display: inline-block;
-  animation: subtleLighten 3s ease-in-out infinite;
-}
-
 
 @keyframes subtlePulse {
-
-  0%,
-  100% {
-    opacity: 0.7;
+  0%, 100% {
+    text-decoration-color: rgba(217, 216, 216, 0.3);
   }
-
   50% {
-    opacity: 1;
+    text-decoration-color: rgba(255, 240, 200, 0.8);
   }
 }
 
-.phone-call,
-.teddy-number-r2 {
-  font-style: italic;
-  cursor: pointer;
-  display: inline-block;
-  animation: subtlePulse 3s ease-in-out infinite;
-}
 
 
 .overlay {
