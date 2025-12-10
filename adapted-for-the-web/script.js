@@ -779,7 +779,26 @@ teddyNumberRight2.addEventListener('mouseout', function () {
 });
 
 
+// shake anim
 
+let lastScrollTop = 0;
+let shakeTimeout;
 
-
-
+leftSide.addEventListener('scroll', function() {
+  let currentScroll = leftSide.scrollTop;
+  let speed = Math.abs(currentScroll - lastScrollTop);
+  
+  if (speed > 70) { 
+      document.body.classList.add('shake-screen');
+      
+      // clear existing timeout so it keeps shaking while scrolling
+      clearTimeout(shakeTimeout);
+      
+      // stop shaking after scrolling stops/slows
+      shakeTimeout = setTimeout(function(){
+          document.body.classList.remove('shake-screen');
+      }, 300);
+  }
+  
+  lastScrollTop = currentScroll;
+});
