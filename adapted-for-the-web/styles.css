@@ -574,3 +574,12 @@ p {
     transform: translate3d(4px, 0, 0) rotate(1deg);
   }
 }
+
+
+/*  */
+
+.fleeing-text {
+    display: inline-block;
+    transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+}

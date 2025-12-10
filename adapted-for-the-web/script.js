@@ -802,3 +802,30 @@ leftSide.addEventListener('scroll', function() {
   
   lastScrollTop = currentScroll;
 });
+
+
+// moves away from cursor
+
+let elusiveTarget = document.querySelector('#elusive-john-g');
+if (elusiveTarget) {
+    elusiveTarget.classList.add('fleeing-text');
+    
+    document.addEventListener('mousemove', function(e) {
+        let rect = elusiveTarget.getBoundingClientRect();
+        let centerX = rect.left + rect.width / 2;
+        let centerY = rect.top + rect.height / 2;
+        
+        let deltaX = centerX - e.clientX;
+        let deltaY = centerY - e.clientY;
+        let dist = Math.hypot(deltaX, deltaY);
+        let threshold = 150;
+        
+        if (dist < threshold && dist > 0) {
+            let scale = (threshold - dist) * 0.8 / dist;
+            
+            elusiveTarget.style.transform = `translate(${deltaX * scale}px, ${deltaY * scale}px)`;
+        } else {
+            elusiveTarget.style.transform = 'translate(0, 0)';
+        }
+    });
+}
