@@ -994,7 +994,7 @@ setInterval(function() {
             }, 500 + Math.random() * 1500);
         }
     }
-}, 1600); 
+}, 1000); 
 
 
 
