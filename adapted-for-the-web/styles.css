@@ -348,7 +348,9 @@ p {
 .teddy-number-l4,
 .teddy-number-l6,
 .teddy-number-l7,
-.phone-call {
+.phone-call,
+.john-left,
+.g-left {
   font-style: italic;
   cursor: pointer;
   animation: subtlePulse 3s ease-in-out infinite;
