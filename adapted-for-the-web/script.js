@@ -786,17 +786,17 @@ teddyNumberRight2.addEventListener('mouseout', function () {
 let titleTimerLeft;
 let titleTimerRight;
 
-titleLeft.addEventListener('mouseover', function() {
+titleLeft.addEventListener('mouseover', function () {
   let count = 0;
   let originalText = 'Momento';
-  
-  titleTimerLeft = setInterval(function() {
+
+  titleTimerLeft = setInterval(function () {
     titleLeft.textContent = '';
     for (let i = 0; i < originalText.length; i++) {
       titleLeft.textContent += chars[Math.floor(Math.random() * chars.length)];
     }
     titleLeft.style.cursor = 'pointer';
-    
+
     count++;
     if (count > 20) {
       clearInterval(titleTimerLeft);
@@ -805,22 +805,22 @@ titleLeft.addEventListener('mouseover', function() {
   }, 30);
 });
 
-titleLeft.addEventListener('mouseout', function() {
+titleLeft.addEventListener('mouseout', function () {
   clearInterval(titleTimerLeft);
   titleLeft.textContent = 'Momento';
 });
 
-titleRight.addEventListener('mouseover', function() {
+titleRight.addEventListener('mouseover', function () {
   let count = 0;
   let originalText = 'Mori';
-  
-  titleTimerRight = setInterval(function() {
+
+  titleTimerRight = setInterval(function () {
     titleRight.textContent = '';
     for (let i = 0; i < originalText.length; i++) {
       titleRight.textContent += chars[Math.floor(Math.random() * chars.length)];
     }
     titleRight.style.cursor = 'pointer';
-    
+
     count++;
     if (count > 20) {
       clearInterval(titleTimerRight);
@@ -829,7 +829,7 @@ titleRight.addEventListener('mouseover', function() {
   }, 30);
 });
 
-titleRight.addEventListener('mouseout', function() {
+titleRight.addEventListener('mouseout', function () {
   clearInterval(titleTimerRight);
   titleRight.textContent = 'Mori';
 });
@@ -840,22 +840,22 @@ titleRight.addEventListener('mouseout', function() {
 let lastScrollTop = 0;
 let shakeTimeout;
 
-leftSide.addEventListener('scroll', function() {
+leftSide.addEventListener('scroll', function () {
   let currentScroll = leftSide.scrollTop;
   let speed = Math.abs(currentScroll - lastScrollTop);
-  
-  if (speed > 70) { 
-      document.body.classList.add('shake-screen');
-      
-      // clear existing timeout so it keeps shaking while scrolling
-      clearTimeout(shakeTimeout);
-      
-      // stop shaking after scrolling stops/slows
-      shakeTimeout = setTimeout(function(){
-          document.body.classList.remove('shake-screen');
-      }, 300);
+
+  if (speed > 70) {
+    document.body.classList.add('shake-screen');
+
+    // clear existing timeout so it keeps shaking while scrolling
+    clearTimeout(shakeTimeout);
+
+    // stop shaking after scrolling stops/slows
+    shakeTimeout = setTimeout(function () {
+      document.body.classList.remove('shake-screen');
+    }, 300);
   }
-  
+
   lastScrollTop = currentScroll;
 });
 
@@ -864,24 +864,119 @@ leftSide.addEventListener('scroll', function() {
 
 let elusiveTarget = document.querySelector('#elusive-john-g');
 if (elusiveTarget) {
-    elusiveTarget.classList.add('fleeing-text');
+  elusiveTarget.classList.add('fleeing-text');
+
+  document.addEventListener('mousemove', function (e) {
+    let rect = elusiveTarget.getBoundingClientRect();
+    let centerX = rect.left + rect.width / 2;
+    let centerY = rect.top + rect.height / 2;
+
+    let deltaX = centerX - e.clientX;
+    let deltaY = centerY - e.clientY;
+    let dist = Math.hypot(deltaX, deltaY);
+    let threshold = 150;
+
+    if (dist < threshold && dist > 0) {
+      let scale = (threshold - dist) * 0.8 / dist;
+
+      elusiveTarget.style.transform = `translate(${deltaX * scale}px, ${deltaY * scale}px)`;
+    } else {
+      elusiveTarget.style.transform = 'translate(0, 0)';
+    }
+  });
+}
+
+
+
+let polaroidTriggers = document.querySelectorAll('.polaroid-trigger');
+// create the preview element
+let polaroidPreview = document.createElement('div');
+polaroidPreview.className = 'polaroid-preview';
+document.body.appendChild(polaroidPreview);
+
+
+// right 1
+let rightPoloriod1 = document.querySelector('#polaroid-r1');
+if (rightPoloriod1) {
+    rightPoloriod1.addEventListener('mouseover', function() {
+        polaroidPreview.style.backgroundImage = "url('assets/poloroid.jpg')";
+        polaroidPreview.classList.add('visible');
+    });
     
-    document.addEventListener('mousemove', function(e) {
-        let rect = elusiveTarget.getBoundingClientRect();
-        let centerX = rect.left + rect.width / 2;
-        let centerY = rect.top + rect.height / 2;
-        
-        let deltaX = centerX - e.clientX;
-        let deltaY = centerY - e.clientY;
-        let dist = Math.hypot(deltaX, deltaY);
-        let threshold = 150;
-        
-        if (dist < threshold && dist > 0) {
-            let scale = (threshold - dist) * 0.8 / dist;
-            
-            elusiveTarget.style.transform = `translate(${deltaX * scale}px, ${deltaY * scale}px)`;
-        } else {
-            elusiveTarget.style.transform = 'translate(0, 0)';
-        }
+    rightPoloriod1.addEventListener('mouseout', function() {
+    polaroidPreview.classList.remove('visible');
+    });
+    
+    rightPoloriod1.addEventListener('mousemove', function(e) {
+         polaroidPreview.style.left = (e.clientX + 20) + 'px';
+         polaroidPreview.style.top = (e.clientY + 20) + 'px';
     });
 }
+
+
+
+// left 1
+let leftPoloriod1 = document.querySelector('#polaroid-l1');
+if (leftPoloriod1) {
+    leftPoloriod1.addEventListener('mouseover', function() {
+        polaroidPreview.style.backgroundImage = "url('assets/discount-in.jpg')";
+        polaroidPreview.classList.add('visible');
+    });
+    
+    leftPoloriod1.addEventListener('mouseout', function() {
+    polaroidPreview.classList.remove('visible');
+    });
+    
+    leftPoloriod1.addEventListener('mousemove', function(e) {
+         polaroidPreview.style.left = (e.clientX + 20) + 'px';
+         polaroidPreview.style.top = (e.clientY + 20) + 'px';
+    });
+}
+
+
+
+// left 4
+let leftPoloriod4 = document.querySelector('#polaroid-l4');
+if (leftPoloriod4) {
+    leftPoloriod4.addEventListener('mouseover', function() {
+        polaroidPreview.style.backgroundImage = "url('assets/dont-beleive-lies.jpg')";
+        polaroidPreview.classList.add('visible');
+    });
+    
+    leftPoloriod4.addEventListener('mouseout', function() {
+    polaroidPreview.classList.remove('visible');
+    });
+    
+    leftPoloriod4.addEventListener('mousemove', function(e) {
+         polaroidPreview.style.left = (e.clientX + 20) + 'px';
+         polaroidPreview.style.top = (e.clientY + 20) + 'px';
+    });
+}
+
+
+
+
+// right 3
+let rightPoloriod3 = document.querySelector('#polaroid-r3');
+if (rightPoloriod3) {
+    rightPoloriod3.addEventListener('mouseover', function() {
+        polaroidPreview.style.backgroundImage = "url('assets/car-poloriod.jpg')";
+        polaroidPreview.classList.add('visible');
+    });
+    
+    rightPoloriod3.addEventListener('mouseout', function() {
+    polaroidPreview.classList.remove('visible');
+    });
+    
+    rightPoloriod3.addEventListener('mousemove', function(e) {
+         polaroidPreview.style.left = (e.clientX + 20) + 'px';
+         polaroidPreview.style.top = (e.clientY + 20) + 'px';
+    });
+}
+
+
+
+
+
+
+
