@@ -17,6 +17,8 @@ let teddyNumberRight2 = document.querySelector('.teddy-number-r2');
 let overlay = document.querySelector('.overlay');
 let yesButton = document.querySelector('.yes-button');
 let noButton = document.querySelector('.no-button');
+let titleLeft = document.querySelector('.story-title-left');
+let titleRight = document.querySelector('.story-title-right');
 
 // Yes button
 yesButton.addEventListener('click', function () {
@@ -776,6 +778,60 @@ teddyNumberRight2.addEventListener('mouseout', function () {
   teddyNumberRight2.textContent = 'Teddy';
   teddyNumberRight2.style.color = 'rgb(34, 34, 34)';
   teddyNumberRight2.style.cursor = 'pointer';
+});
+
+
+//title 
+
+let titleTimerLeft;
+let titleTimerRight;
+
+titleLeft.addEventListener('mouseover', function() {
+  let count = 0;
+  let originalText = 'Momento';
+  
+  titleTimerLeft = setInterval(function() {
+    titleLeft.textContent = '';
+    for (let i = 0; i < originalText.length; i++) {
+      titleLeft.textContent += chars[Math.floor(Math.random() * chars.length)];
+    }
+    titleLeft.style.cursor = 'pointer';
+    
+    count++;
+    if (count > 20) {
+      clearInterval(titleTimerLeft);
+      titleLeft.textContent = originalText;
+    }
+  }, 30);
+});
+
+titleLeft.addEventListener('mouseout', function() {
+  clearInterval(titleTimerLeft);
+  titleLeft.textContent = 'Momento';
+});
+
+titleRight.addEventListener('mouseover', function() {
+  let count = 0;
+  let originalText = 'Mori';
+  
+  titleTimerRight = setInterval(function() {
+    titleRight.textContent = '';
+    for (let i = 0; i < originalText.length; i++) {
+      titleRight.textContent += chars[Math.floor(Math.random() * chars.length)];
+    }
+    titleRight.style.cursor = 'pointer';
+    
+    count++;
+    if (count > 20) {
+      clearInterval(titleTimerRight);
+      titleRight.textContent = originalText;
+    }
+  }, 30);
+});
+
+titleRight.addEventListener('mouseout', function() {
+  clearInterval(titleTimerRight);
+  titleRight.textContent = 'Mori';
 });
 
 
