@@ -860,7 +860,7 @@ leftSide.addEventListener('scroll', function () {
 });
 
 
-// moves away from cursor
+// run away from cursor
 
 let elusiveTarget = document.querySelector('#elusive-john-g');
 if (elusiveTarget) {
@@ -977,6 +977,24 @@ if (rightPoloriod3) {
 
 
 
+// randomly disappear words
+
+let allStorySpans = document.querySelectorAll('.story-paragraph span');
+
+setInterval(function() {
+    for(let i=0; i<5; i++) {
+        let randomIndex = Math.floor(Math.random() * allStorySpans.length);
+        let span = allStorySpans[randomIndex];
+
+        if (span) {
+            span.classList.add('memory-faded');
+            
+            setTimeout(function() {
+                span.classList.remove('memory-faded');
+            }, 500 + Math.random() * 1500);
+        }
+    }
+}, 1600); 
 
 
 

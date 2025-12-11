@@ -332,17 +332,8 @@ p {
 .teddy-number-r2 {
   font-style: italic;
   cursor: pointer;
-  animation: subtleGlow 3s ease-in-out infinite;
-}
-
-
-@keyframes subtleGlow {
-  0%, 100% {
-    text-shadow: 0 0 2cm currentColor;
-  }
-  50% {
-    text-shadow: 0 0 8px currentColor;
-  }
+  animation: subtlePulseB 3s ease-in-out infinite;
+  text-decoration: underline;
 }
 
 .teddy-number-l4,
@@ -353,16 +344,25 @@ p {
 .g-left {
   font-style: italic;
   cursor: pointer;
-  animation: subtlePulse 3s ease-in-out infinite;
+  animation: subtlePulseA 3s ease-in-out infinite;
   text-decoration: underline;
 }
 
-@keyframes subtlePulse {
+@keyframes subtlePulseA {
   0%, 100% {
     text-decoration-color: rgba(217, 216, 216, 0.3);
   }
   50% {
-    text-decoration-color: rgba(255, 240, 200, 0.8);
+    text-decoration-color: rgba(255, 252, 243, 0.8);
+  }
+}
+
+@keyframes subtlePulseB {
+  0%, 100% {
+    text-decoration-color: rgba(34, 34, 34);
+  }
+  50% {
+    text-decoration-color: rgba(90, 115, 140);
   }
 }
 
@@ -613,4 +613,16 @@ p {
   transform: rotate(-5deg) scale(1);
   /* Developed state: clear image */
   filter: sepia(0.3) contrast(1.1) brightness(1) grayscale(0) blur(0);
+}
+
+
+
+
+
+
+
+.memory-faded {
+    opacity: 0.1;
+    filter: blur(2px);
+    transform: scale(0.95);
 }
